@@ -31,7 +31,7 @@ encerraThread = threading.Event()
 def receive():
     while not encerraThread.is_set():
         try:
-            message = client.recv(64).decode('utf-8')
+            message = client.recv(1024).decode('utf-8')
             if testarip(ip,message): #se testar clientes e servidores no mesmo ip, desativar esse if
                 print(message)
 
